@@ -25,12 +25,12 @@ let main args =
     (*
 open System
 let sum seq m =
-    let result =
+    let r =
         Seq.fold (fun acc x ->
             if abs x % 10 = m then acc + x
             else acc
         ) 0 seq
-    printf "сумма = %d\n" result
+    printf "сумма = %d\n" r
 
 [<EntryPoint>]
 let main args =
