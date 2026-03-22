@@ -4,7 +4,7 @@ open System
 let last seq =
     let r =
         seq |> Seq.map (fun x -> abs x % 10)
-    printf "результат: %A\n" r
+    printfn "результат: %A\n" (Seq.toList r)
 
 [<EntryPoint>]
 let main args =
