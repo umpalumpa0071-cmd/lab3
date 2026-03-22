@@ -1,22 +1,25 @@
 ﻿(*
 open System
 
-let last x = x % 10
+let last seq =
+    let r =
+        seq |> Seq.map (fun x -> abs x % 10)
+    printf "результат: %A\n" r
 
 [<EntryPoint>]
 let main args =
-    printf "сколько чисел вы хотите ввести? "
-    let n = int(Console.ReadLine())
+    printf "Введите количество элементов n: "
+    let n = int (Console.ReadLine())
 
-    let numbers =
-        [ for i in 1 .. n do
-            printf "Введите число %d: " i
-            let num = int(Console.ReadLine())
-            yield num ]
+    let seq =
+        seq {
+            for i in 1..n do
+                printf "Введите элемент %d: " i
+                let x = int (Console.ReadLine())
+                yield x
+        }
 
-    let lastn = numbers |> List.map last
-
-    printfn "Последние цифры введённых чисел: %A" lastn
+    last seq
     0
     *)
     (*
